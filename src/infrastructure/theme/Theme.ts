@@ -83,9 +83,35 @@ const theme = createTheme({
             color: 'mainBackground',
             fontSize: 16,
             margin: 'm',
+        },
+        card: {
+            fontSize: 16,
+            fontFamily: 'Lato-Regular',
+            flexWrap: 'wrap'
+        }
+    },
+    headerVariants: {
+        page: {
+            flex: 1,
+            alignItems: 'flex-start',
+        },
+        todo: {
+            date: {
+                flex: 2
+            },
+            body: {
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                marginBottom: 12
+            }
         }
     },
     containerVariants: {
+        centered: {
+            flex: 1,
+            alignSelf: 'center',
+            justifyContent: 'center'
+        },
         card: {
             flex: 1,
             flexDirection: 'row',
@@ -99,6 +125,10 @@ const theme = createTheme({
         cardSeparator: {
             paddingVertical: 6
         },
+        cardBody: {
+            flex: 1.75,
+            marginRight: 10
+        },
         page: {
             flex: 1,
             marginHorizontal: 21,
@@ -106,16 +136,11 @@ const theme = createTheme({
             backgroundColor: 'mainBackground',
             justifyContent: 'flex-start',
         },
-        header: {
+        tagGroup: {
             flex: 1,
-            alignItems: 'flex-start',
-        },
-        todoHeader: {
-            flexDirection: 'row', justifyContent: 'space-between', marginBottom: 12
-        },
-        tag: {
-            border: 1.2,
-            borderColor: 'red'
+            flexDirection: 'row',
+            justifyContent: 'space-around',
+            marginVertical: 20
         }
     },
     tagVariants: {
@@ -138,7 +163,7 @@ const theme = createTheme({
             backgroundColor: palette.yellow,
             flex: 0.65,
             justifyContent: 'center',
-            alignItems: 'center'           
+            alignItems: 'center'
         },
         bordered: {
             borderWidth: 1.5,
@@ -170,10 +195,7 @@ const theme = createTheme({
         }
     },
     iconVariants: {
-        m: {
-            width: 40,
-            height: 40
-        }
+        m: 40
     }
 });
 

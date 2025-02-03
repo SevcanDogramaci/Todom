@@ -9,7 +9,7 @@ const ListTodosPage = () => {
     const theme = useTheme();
     const { todos, onTodoPress, onNewTodoPress } = useViewModel();
 
-    const icon = <IconAdd height={theme.iconVariants.m.height} width={theme.iconVariants.m.width} />
+    const icon = <IconAdd height={theme.iconVariants.m} width={theme.iconVariants.m} />
 
     return <View style={theme.containerVariants.page}>
         <TodoList todos={todos} onListItemPress={onTodoPress} />

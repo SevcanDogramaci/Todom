@@ -4,11 +4,12 @@ import { Container } from "../../../infrastructure/di/Container";
 import Todo from "../../../domain/models/Todo";
 import Status from "../../../domain/models/Status";
 import PubSub, { NewTodoCreatedEvent, NewTodoFailedEvent } from "../../../infrastructure/event/Event";
+import { DefaultScreenProps } from "../../../infrastructure/navigation/Navigation";
 
 const CreateTodoViewModel = () => {
     const [detail, setDetail] = useState<string>("");
     const [status, setStatus] = useState<Status>(Status.PENDING);
-    const navigation = useNavigation();
+    const navigation = useNavigation<DefaultScreenProps>();
 
     const onCreateTodoPress = () => {
         const todo = new Todo(detail, status);
@@ -28,9 +29,9 @@ const CreateTodoViewModel = () => {
 
     const isTagSelected = (tagStatus: Status) => status === tagStatus;
 
-    const isCreateTodoButtonActive = detail.trim().length == 0;
+    const isTodoCreatable = detail.trim().length == 0;
 
-    return { detail, status, onCreateTodoPress, onDetailChange, onStatusChange, isTagSelected, isCreateTodoButtonActive };
+    return { detail, status, onCreateTodoPress, onDetailChange, onStatusChange, isTagSelected, isTodoCreatable };
 }
 
 export default CreateTodoViewModel;

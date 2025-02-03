@@ -17,10 +17,11 @@ const TodoCard = (props: TodoCardProps) => {
     const tag = getTagByStatus(props.status);
 
     return <TouchableOpacity style={theme.containerVariants.card} onPress={props.onPress}>
-        <View style={{ flex: 1.75, marginRight: 10 }}>
-            <Text variant="body" style={{ flexWrap: 'wrap' }} numberOfLines={1}>{props.todo}</Text>
+        <View style={theme.containerVariants.cardBody}>
+            <Text variant="card" numberOfLines={1}>{props.todo}</Text>
             <Text variant="note" >{props.createdDate.toDateString()}</Text>
         </View>
+        
         {tag}
     </TouchableOpacity>
 }
