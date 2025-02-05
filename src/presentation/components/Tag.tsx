@@ -18,9 +18,11 @@ export interface TagProps {
 const Tag = (props: TagProps) => {
     const theme = useTheme();
     const style = getTagThemeByType(props.type);
-    const {borderWidth, borderColor} = theme.tagVariants.bordered;
+    const defaultTheme = theme.tagVariants.defaults;
+    const borderedTheme = theme.tagVariants.bordered;
+    const borderWidth = props.bordered ? borderedTheme.borderWidth : defaultTheme.borderWidth
 
-    return <View style={style} borderWidth={props.bordered && borderWidth} borderColor={borderColor}>
+    return <View style={style} borderWidth={borderWidth} borderColor={borderedTheme.borderColor}>
         <Text variant="tag">{props.text}</Text>
     </View>
 }
